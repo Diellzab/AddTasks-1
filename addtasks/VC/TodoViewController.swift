@@ -12,8 +12,9 @@ class TodoViewController: UIViewController {
     
     //MARK: Outlets
 
-    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    
     @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var doneBtn: UIButton!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     override func viewDidLoad() {
@@ -21,28 +22,31 @@ class TodoViewController: UIViewController {
 
         // Do any additional setup after loading the .
         textView.becomeFirstResponder()
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillShow(with:)),
+            name: .UIKeyboardWillShow,
+            object: nil
+        )
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(with:)), name: .UIKeyboardWillShow, object: nil)
-    }
+    
     
     
     //MARK: Actions
     
-    @objc func keyboardWillShow(with notification:Notification){
+    @objc func keyboardWillShow(with notification: Notification){
         let key  = "UIKeyboardFrameEndUserInfoKey"
         guard let keyboardFrame = notification.userInfo?[key] as? NSValue
             else {
                 return
         }
-        let keyboardHeight = keyboardFrame.cgRectValue.height
+        let keyboardHeight = keyboardFrame.cgRectValue.height + 16
         
         bottomConstraint.constant = keyboardHeight
         
-        UIView.animate(withDuration: 0.5) {
+        UIView.animate(withDuration: 0.3) {
             
             self.view.layoutIfNeeded()
             

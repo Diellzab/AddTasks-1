@@ -15,6 +15,9 @@ class TodoTableViewController: UITableViewController {
 
         
     }
+    
+
+    //MARK: -Table view data source
 
    
 
@@ -22,6 +25,15 @@ class TodoTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return 10
     }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        
+        // Configure the cell...
+        
+        return cell
+    }
+    
 
  
     // Table view delegate

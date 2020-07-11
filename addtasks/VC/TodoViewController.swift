@@ -19,7 +19,8 @@ class TodoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // Do any additional setup after loading the .
+        textView.becomeFirstResponder()
     }
 
     override func didReceiveMemoryWarning() {
@@ -51,9 +52,12 @@ class TodoViewController: UIViewController {
     
     @IBAction func cancelBtn(_ sender: UIButton) {
         dismiss(animated: true)
+        
+        textView.resignFirstResponder()
     }
     
     @IBAction func done(_ sender: UIButton) {
+        dismiss(animated: true)
     }
     /*
     // MARK: - Navigation
@@ -66,3 +70,21 @@ class TodoViewController: UIViewController {
     */
 
 }
+
+
+extension TodoViewController: UITextViewDelegate {
+    func textViewDidChangeSelection(_ textView: UITextView) {
+        if doneBtn.isHidden {
+            textView.text.removeAll()
+            textView.textColor = .white
+            
+            doneBtn.isHidden = false
+            
+            UIView.animate(withDuration: 0.3, animations: {
+                self.view.layoutIfNeeded()
+            })
+        }
+    }
+}
+
+

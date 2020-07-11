@@ -6,12 +6,45 @@
 //  Copyright © 2020 dardan bakiu. All rights reserved.
 //
 
+
+
 import UIKit
+import CoreData
 
 class TodoTableViewController: UITableViewController {
+    
+    //MARK: -Properties
+    
+    var resultsController: NSFetchedResultsController<Todo>!
+    let coreDataStack = CoreDataStack()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Request
+        let request: NSFetchRequest<Todo> = Todo.fetchRequest()
+        let sortDescriptors = NSSortDescriptor(key: "date", ascending:true)
+        
+        //Init
+        request.sortDescriptors = []
+        resultsController = NSFetchedResultsController(
+            
+            fetchRequest: request,
+            managedObjectContext: coreDataStack.managedContext,
+            sectionNameKeyPath: nil,
+            cacheName: nil
+        
+        )
+        
+        //Fetch
+        
+        do{
+            try resultsController.performFetch()
+        }
+        
+        catch {
+            print("Perofrm fetch error: \(error)")
+        }
 
         
     }
@@ -27,7 +60,7 @@ class TodoTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TodoCell", for: indexPath)
         
         // Configure the cell...
         
@@ -69,3 +102,5 @@ class TodoTableViewController: UITableViewController {
     */
 
 }
+
+ 

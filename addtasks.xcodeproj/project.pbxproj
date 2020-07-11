@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		15ECE49224B86A5900C46BD6 /* TodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15ECE49124B86A5900C46BD6 /* TodoViewController.swift */; };
+		15EDB1F724BA783D000B977B /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15EDB1F624BA783D000B977B /* CoreDataStack.swift */; };
 		C708C5AD24BA433800F36584 /* Todos.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C708C5AB24BA433800F36584 /* Todos.xcdatamodeld */; };
 		C7099B0824AF20BB00FA1535 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7099B0724AF20BB00FA1535 /* AppDelegate.swift */; };
 		C7099B0A24AF20BB00FA1535 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7099B0924AF20BB00FA1535 /* ViewController.swift */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		15ECE49124B86A5900C46BD6 /* TodoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoViewController.swift; sourceTree = "<group>"; };
+		15EDB1F624BA783D000B977B /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		C708C5AC24BA433800F36584 /* Todos.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Todos.xcdatamodel; sourceTree = "<group>"; };
 		C7099B0424AF20BB00FA1535 /* addtasks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = addtasks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7099B0724AF20BB00FA1535 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +47,7 @@
 			isa = PBXGroup;
 			children = (
 				C708C5AB24BA433800F36584 /* Todos.xcdatamodeld */,
+				15EDB1F624BA783D000B977B /* CoreDataStack.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -164,6 +167,7 @@
 				15ECE49224B86A5900C46BD6 /* TodoViewController.swift in Sources */,
 				C708C5AD24BA433800F36584 /* Todos.xcdatamodeld in Sources */,
 				C7099B0A24AF20BB00FA1535 /* ViewController.swift in Sources */,
+				15EDB1F724BA783D000B977B /* CoreDataStack.swift in Sources */,
 				C74CC23624B0729F004748B0 /* TodoTableViewController.swift in Sources */,
 				C7099B0824AF20BB00FA1535 /* AppDelegate.swift in Sources */,
 			);

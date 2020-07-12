@@ -9,8 +9,15 @@
 
 
 import UIKit
+import CoreData
 
 class TodoViewController: UIViewController {
+    
+    
+    //MARK: - Properties
+    var managedContext: NSManagedObjectContext!
+    var todo: Todo?
+    
     
     //MARK: Outlets
 
@@ -31,6 +38,11 @@ class TodoViewController: UIViewController {
             name: .UIKeyboardWillShow,
             object: nil
         )
+        
+        if let todo = todo {
+            textView.text = todo.title
+            segmentedControl.selectedSegmentIndex = Int(todo.priority)
+        }
     }
 
     
@@ -56,24 +68,47 @@ class TodoViewController: UIViewController {
         
     }
     
-    @IBAction func cancelBtn(_ sender: UIButton) {
+    fileprivate func dismissAndResign() {
         dismiss(animated: true)
         
         textView.resignFirstResponder()
     }
     
+    @IBAction func cancelBtn(_ sender: UIButton) {
+        dismissAndResign()
+    }
+    
     @IBAction func done(_ sender: UIButton) {
-        dismiss(animated: true)
+        guard let title = textView.text, !title.isEmpty
+            else{
+                return
+        }
+        
+        if let todo = self.todo{
+            todo.title = title
+            todo.priority = Int16(segmentedControl.selectedSegmentIndex)
+        }else {
+            
+        
+        
+        let todo = Todo(context: managedContext)
+        todo.title = title
+        todo.priority = Int16(segmentedControl.selectedSegmentIndex)
+        todo.date = Date()
+            
+        }
+        
+        do{
+            try managedContext.save()
+            dismissAndResign()
+        }
+        catch{
+            print("Error saving task: \(error)")
+        }
+        
+        
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+   
 
 }
 
@@ -86,9 +121,9 @@ extension TodoViewController: UITextViewDelegate {
             
             doneBtn.isHidden = false
             
-            UIView.animate(withDuration: 0.3, animations: {
+            UIView.animate(withDuration: 0.3){
                 self.view.layoutIfNeeded()
-            })
+            }
         }
     }
 }

@@ -9,8 +9,14 @@
 
 
 import UIKit
+import CoreData
 
 class TodoViewController: UIViewController {
+    
+    
+    //MARK: - Properties
+    var managedContext: NSManagedObjectContext!
+    
     
     //MARK: Outlets
 
@@ -63,7 +69,25 @@ class TodoViewController: UIViewController {
     }
     
     @IBAction func done(_ sender: UIButton) {
-        dismiss(animated: true)
+        guard let title = textView.text, !title.isEmpty
+            else{
+                return
+        }
+        
+        let todo = Todo(context: managedContext)
+        todo.title = title
+        todo.priority = Int16(segmentedControl.selectedSegmentIndex)
+        todo.date = Date()
+        
+        do{
+            try managedContext.save()
+            dismiss(animated: true)
+            textView.resignFirstResponder()
+        }
+        catch{
+            print("Error saving task: \(error)")
+        }
+        
     }
     /*
     // MARK: - Navigation

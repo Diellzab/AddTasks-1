@@ -56,13 +56,16 @@ class TodoTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 10
+        return resultsController.sections?[section].objects?.count ?? 0
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TodoCell", for: indexPath)
         
         // Configure the cell...
+        
+        let todo = resultsController.object(at: indexPath)
+        cell.textLabel?.text = todo.title
         
         return cell
     }
@@ -91,15 +94,17 @@ class TodoTableViewController: UITableViewController {
     return UISwipeActionsConfiguration(actions: [action])
         
     }
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if let _ = sender as? UIBarButtonItem, let vc = segue.destination as? TodoViewController{
+            vc.managedContext = coreDataStack.managedContext
+        }
+        
     }
-    */
+    
 
 }
 

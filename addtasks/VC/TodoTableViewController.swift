@@ -23,7 +23,7 @@ class TodoTableViewController: UITableViewController {
         
         //Request
         let request: NSFetchRequest<Todo> = Todo.fetchRequest()
-        let sortDescriptors = NSSortDescriptor(key: "date", ascending:true)
+        var sortDescriptors = NSSortDescriptor(key: "date", ascending:true)
         
         //Init
         request.sortDescriptors = []

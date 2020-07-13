@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1536894324BC824E00E1A6F1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1536894224BC824D00E1A6F1 /* LoginViewController.swift */; };
 		15ECE49224B86A5900C46BD6 /* TodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15ECE49124B86A5900C46BD6 /* TodoViewController.swift */; };
 		15EDB1F724BA783D000B977B /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15EDB1F624BA783D000B977B /* CoreDataStack.swift */; };
 		C708C5AD24BA433800F36584 /* Todos.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C708C5AB24BA433800F36584 /* Todos.xcdatamodeld */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1536894224BC824D00E1A6F1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		15ECE49124B86A5900C46BD6 /* TodoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoViewController.swift; sourceTree = "<group>"; };
 		15EDB1F624BA783D000B977B /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		C708C5AC24BA433800F36584 /* Todos.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Todos.xcdatamodel; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 				C7099B0E24AF20BB00FA1535 /* Assets.xcassets */,
 				C7099B1024AF20BB00FA1535 /* LaunchScreen.storyboard */,
 				C7099B1324AF20BB00FA1535 /* Info.plist */,
+				1536894224BC824D00E1A6F1 /* LoginViewController.swift */,
 			);
 			path = addtasks;
 			sourceTree = "<group>";
@@ -164,6 +167,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1536894324BC824E00E1A6F1 /* LoginViewController.swift in Sources */,
 				15ECE49224B86A5900C46BD6 /* TodoViewController.swift in Sources */,
 				C708C5AD24BA433800F36584 /* Todos.xcdatamodeld in Sources */,
 				C7099B0A24AF20BB00FA1535 /* ViewController.swift in Sources */,

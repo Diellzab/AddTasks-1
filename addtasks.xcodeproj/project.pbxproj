@@ -17,6 +17,7 @@
 		C7099B0F24AF20BB00FA1535 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7099B0E24AF20BB00FA1535 /* Assets.xcassets */; };
 		C7099B1224AF20BB00FA1535 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7099B1024AF20BB00FA1535 /* LaunchScreen.storyboard */; };
 		C74CC23624B0729F004748B0 /* TodoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74CC23524B0729F004748B0 /* TodoTableViewController.swift */; };
+		C7BB94F724BF2719009B1D87 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BB94F624BF2719009B1D87 /* WeatherViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		C7099B1124AF20BB00FA1535 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C7099B1324AF20BB00FA1535 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C74CC23524B0729F004748B0 /* TodoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoTableViewController.swift; sourceTree = "<group>"; };
+		C7BB94F624BF2719009B1D87 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 				C7099B1024AF20BB00FA1535 /* LaunchScreen.storyboard */,
 				C7099B1324AF20BB00FA1535 /* Info.plist */,
 				1536894224BC824D00E1A6F1 /* LoginViewController.swift */,
+				C7BB94F624BF2719009B1D87 /* WeatherViewController.swift */,
 			);
 			path = addtasks;
 			sourceTree = "<group>";
@@ -172,6 +175,7 @@
 				C708C5AD24BA433800F36584 /* Todos.xcdatamodeld in Sources */,
 				C7099B0A24AF20BB00FA1535 /* ViewController.swift in Sources */,
 				15EDB1F724BA783D000B977B /* CoreDataStack.swift in Sources */,
+				C7BB94F724BF2719009B1D87 /* WeatherViewController.swift in Sources */,
 				C74CC23624B0729F004748B0 /* TodoTableViewController.swift in Sources */,
 				C7099B0824AF20BB00FA1535 /* AppDelegate.swift in Sources */,
 			);

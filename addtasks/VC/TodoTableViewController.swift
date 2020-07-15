@@ -13,6 +13,16 @@ import CoreData
 
 class TodoTableViewController: UITableViewController {
     
+    @IBAction func weatherViewItemButton(_ sender: Any) {
+        print("weather btn clicked")
+        
+        self.performSegue(withIdentifier: "weatherViewSegue", sender: self)
+    }
+//    @IBAction func weatherViewButtonPressed(_ sender: Any) {
+//        print("weather btn clicked")
+//
+//        self.performSegue(withIdentifier: "weatherViewSegue", sender: self)
+//    }
     //MARK: -Properties
     
     var resultsController: NSFetchedResultsController<Todo>!

@@ -10,6 +10,7 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
+   
     @IBOutlet weak var txtUsername: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
     override func viewDidLoad() {
@@ -30,6 +31,10 @@ class LoginViewController: UIViewController {
         }
     }
     
+    @IBAction func rateBtn(_ sender: Any) {
+        
+        showAlert(title: "Alert!", message: "Do you like this app?")
+    }
     @IBAction func LoginBtn(_ sender: Any) {
         
         if txtUsername.text == "admin" && txtPassword.text == "admin" {

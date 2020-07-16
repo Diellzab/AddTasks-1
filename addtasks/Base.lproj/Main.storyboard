@@ -34,6 +34,18 @@
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="khc-k7-6zp">
+                            <rect key="frame" x="0.0" y="116" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="0.88246842616580312" green="0.88246842616580312" blue="0.88246842616580312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <state key="normal" title="Click here to add a new task">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <segue destination="qO8-CW-5yP" kind="presentation" id="uJC-Qr-mPK"/>
+                            </connections>
+                        </button>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TodoCell" textLabel="OTV-Ch-whm" style="IBUITableViewCellStyleDefault" id="hPJ-Ll-mJO">
                                 <rect key="frame" x="0.0" y="72" width="375" height="44"/>
@@ -58,13 +70,11 @@
                             <outlet property="delegate" destination="8aH-2b-ND0" id="mhn-CK-pPl"/>
                         </connections>
                     </tableView>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" title="All Tasks" id="SL3-Lm-ZOe">
                         <rightBarButtonItems>
                             <barButtonItem systemItem="add" id="Cob-Fb-0yI">
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <connections>
-                                    <segue destination="qO8-CW-5yP" kind="presentation" identifier="ShowAddTodo" id="Wad-MA-c1O"/>
-                                </connections>
                             </barButtonItem>
                             <barButtonItem title="Item" id="U2f-G9-Uf0">
                                 <connections>
@@ -73,6 +83,7 @@
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <segue destination="rxO-PY-eCN" kind="showDetail" identifier="weatherViewSegue" id="3Rh-cU-voB"/>
                     </connections>
@@ -161,6 +172,15 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HpF-Ko-AaL">
+                                <rect key="frame" x="245" y="20" width="114" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Weather"/>
+                                <connections>
+                                    <segue destination="rxO-PY-eCN" kind="presentation" id="830-Tg-Ned"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.5723687543" green="0.69051545319999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -185,7 +205,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2yQ-0l-v9t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1241" y="-180"/>
+            <point key="canvasLocation" x="1240.8" y="-180.35982008995504"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Q00-TO-Gko">
@@ -355,5 +375,8 @@
             <point key="canvasLocation" x="228" y="561.76911544227892"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="830-Tg-Ned"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.5723687543" green="0.69051545319999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

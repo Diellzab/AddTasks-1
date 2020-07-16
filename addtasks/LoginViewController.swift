@@ -33,7 +33,25 @@ class LoginViewController: UIViewController {
     
     @IBAction func rateBtn(_ sender: Any) {
         
-        showAlert(title: "Alert!", message: "Do you like this app?")
+        let alert = UIAlertController(title: "Alert!", message: "Do you like this app?", preferredStyle: .alert)
+        let yesBtn = UIAlertAction(title: "Yes", style: .default, handler: self.yess)
+        let noBtn = UIAlertAction(title: "No", style: .cancel, handler: self.noo)
+        alert.addAction(yesBtn)
+        alert.addAction(noBtn)
+        self.present(alert, animated: true, completion: nil)
+        
+        
+        
+    }
+    
+    
+    func yess(alert: UIAlertAction!){
+        print("Yes")
+        
+    }
+    
+    func noo(alert: UIAlertAction!){
+        print("No")
     }
     @IBAction func LoginBtn(_ sender: Any) {
         
@@ -46,6 +64,16 @@ class LoginViewController: UIViewController {
             
             self.navigationController?.pushViewController(TodoTableViewController, animated: true)
         }
+        
+        else {
+            let alert1 = UIAlertController(title: "Alert", message: "Username or password are incorrect", preferredStyle: .alert)
+            let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alert1.addAction(ok)
+            present(alert1, animated: true, completion: nil)
+            
+        }
+        
+        
     }
     
     /*

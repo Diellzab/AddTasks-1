@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -50,13 +51,23 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="All Tasks" id="SL3-Lm-ZOe">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Cob-Fb-0yI">
-                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <segue destination="qO8-CW-5yP" kind="presentation" identifier="ShowAddTodo" id="Wad-MA-c1O"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="Cob-Fb-0yI">
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <segue destination="qO8-CW-5yP" kind="presentation" identifier="ShowAddTodo" id="Wad-MA-c1O"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Item" id="U2f-G9-Uf0">
+                                <connections>
+                                    <action selector="weatherViewItemButton:" destination="8aH-2b-ND0" id="DZp-10-SHX"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
+                    <connections>
+                        <segue destination="rxO-PY-eCN" kind="showDetail" identifier="weatherViewSegue" id="3Rh-cU-voB"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fMM-xk-RpP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -156,6 +167,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="CW8-vD-Zzi"/>
                     </view>
+                    <navigationItem key="navigationItem" id="cmP-7e-gwf"/>
                     <connections>
                         <outlet property="bottomConstraint" destination="Xwn-0x-EOq" id="G9C-iS-oWs"/>
                         <outlet property="doneBtn" destination="AT6-kO-yCu" id="Da2-cn-0Pz"/>
@@ -183,12 +195,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="8aH-2b-ND0" kind="relationship" relationship="rootViewController" id="3ZG-kW-nch"/>
+                        <segue destination="8aH-2b-ND0" kind="relationship" relationship="rootViewController" id="GoO-Yd-KKQ"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nAU-cI-NY4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1126" y="-154"/>
+            <point key="canvasLocation" x="-1402" y="-199"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="tYr-AW-iHu">
@@ -280,6 +292,68 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xsc-AR-fhH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-788" y="-1112"/>
+        </scene>
+        <!--Weather View Controller-->
+        <scene sceneID="yCL-eq-G0c">
+            <objects>
+                <viewController storyboardIdentifier="WeatherViewController" id="rxO-PY-eCN" customClass="WeatherViewController" customModule="addtasks" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hfe-rA-HrP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Weather" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="YSs-2k-AE4">
+                                <rect key="frame" x="67" y="20" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="46"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="City" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Tf-Hm-clo">
+                                <rect key="frame" x="67" y="156" width="240" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="°C" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="T9U-OJ-D2K">
+                                <rect key="frame" x="67" y="305" width="240" height="58"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vi4-hC-9Ej">
+                                <rect key="frame" x="138" y="244" width="98" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Look">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="lookWeatherBtn:" destination="rxO-PY-eCN" eventType="touchUpInside" id="yRt-hM-bJA"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="QO0-IP-3ZK"/>
+                    </view>
+                    <toolbarItems>
+                        <barButtonItem title="Item" width="114" id="qB7-CB-aOR"/>
+                    </toolbarItems>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="celsiusGradeTextView" destination="T9U-OJ-D2K" id="QyN-fM-r3l"/>
+                        <outlet property="cityEditText" destination="3Tf-Hm-clo" id="g3u-Od-07m"/>
+                        <outlet property="weather_celsiusResult" destination="T9U-OJ-D2K" id="err-kA-MhS"/>
+                        <outlet property="weather_editText" destination="3Tf-Hm-clo" id="euB-Do-cBY"/>
+                        <outlet property="weather_lookButton" destination="Vi4-hC-9Ej" id="Vn9-Ty-hme"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B9L-FY-QhF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="228" y="561.76911544227892"/>
         </scene>
     </scenes>
 </document>

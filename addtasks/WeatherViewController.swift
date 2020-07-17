@@ -9,22 +9,28 @@
 import UIKit
 
 class WeatherViewController: UIViewController {
+//
+//    @IBOutlet weak var cityEditText: UITextField!
+//    @IBOutlet weak var celsiusGradeTextView: UITextView!
     
-    @IBOutlet weak var cityEditText: UITextField!
-    @IBOutlet weak var celsiusGradeTextView: UITextView!
+// qeto dy posht duhet mi shti mrena butonit
+//
     
-    @IBAction func lookWeatherBtn(_ sender: UIButton) {
-        var city = cityEditText.text
-        
-        celsiusGradeTextView.text = city
-        
-    }
+    @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var textView: UITextView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
     
+    @IBAction func searchButton(_ sender: Any) {
+        var city = textField.text
+
+        textView.text = city
+    
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

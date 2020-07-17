@@ -67,6 +67,9 @@
                         <rightBarButtonItems>
                             <barButtonItem systemItem="add" id="Cob-Fb-0yI">
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <segue destination="qO8-CW-5yP" kind="presentation" id="yqb-Jc-pGw"/>
+                                </connections>
                             </barButtonItem>
                             <barButtonItem title="Item" id="U2f-G9-Uf0">
                                 <connections>
@@ -220,7 +223,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nAU-cI-NY4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1402" y="-199"/>
+            <point key="canvasLocation" x="-1150" y="-111"/>
         </scene>
         <!--Welcome, please log in-->
         <scene sceneID="tYr-AW-iHu">
@@ -240,7 +243,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XiQ-7N-JtH">
-                                <rect key="frame" x="40" y="283" width="295" height="50"/>
+                                <rect key="frame" x="40" y="283" width="295" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Egz-G5-Jym"/>
                                 </constraints>
@@ -249,7 +252,7 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yol-Gm-k6g">
-                                <rect key="frame" x="40" y="373" width="295" height="40"/>
+                                <rect key="frame" x="40" y="353" width="295" height="40"/>
                                 <color key="backgroundColor" red="0.22039579723298261" green="0.26588925874975877" blue="0.38505909974093266" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="8EL-QX-Smg"/>
@@ -260,11 +263,11 @@
                                 </state>
                                 <connections>
                                     <action selector="LoginBtn:" destination="K0M-VC-MS7" eventType="touchUpInside" id="qYV-7Z-Yfp"/>
-                                    <segue destination="qO8-CW-5yP" kind="presentation" id="vrB-kO-wq4"/>
+                                    <segue destination="rxO-PY-eCN" kind="presentation" id="NXC-ui-YT7"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yZA-9l-Aah">
-                                <rect key="frame" x="150" y="566" width="75" height="41"/>
+                                <rect key="frame" x="150" y="546" width="75" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="0Sq-rM-5SN"/>
                                 </constraints>
@@ -403,7 +406,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="3Rh-cU-voB"/>
+        <segue reference="NXC-ui-YT7"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.5723687543" green="0.69051545319999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

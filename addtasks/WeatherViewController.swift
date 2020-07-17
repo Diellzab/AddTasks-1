@@ -18,7 +18,9 @@ class WeatherViewController: UIViewController {
     
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var textView: UITextView!
-    
+    var weatherMainTemp : mainTemp!
+    let tableView = UITableView()
+    var moti: Double!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,8 +29,26 @@ class WeatherViewController: UIViewController {
     
     @IBAction func searchButton(_ sender: Any) {
         let cityy = textField.text
-        weatherAPI.shared.fetchWeatherApiList(city:cityy!)
-    
+       
+      
+        let anonymousFunction = { (fetchedWeatherInfo: mainTemp) in
+            self.weatherMainTemp = fetchedWeatherInfo
+            self.moti = fetchedWeatherInfo.temp
+            self.tableView.reloadData()
+            
+            print(fetchedWeatherInfo.temp)
+           
+         
+        }
+        
+        weatherAPI.shared.fetchWeatherApiList(city:cityy! , onCompletion: anonymousFunction)
+        do {
+            sleep(4)
+        }
+        var motiString = "\(moti)"
+        var newMotiString = motiString.replacingOccurrences(of: "Optional(", with: "°C ")
+        newMotiString = newMotiString.replacingOccurrences(of: ")", with: " ")
+        textView.text = newMotiString
     }
     
 

@@ -46,9 +46,14 @@ class WeatherViewController: UIViewController {
             sleep(4)
         }
         var motiString = "\(moti)"
-        var newMotiString = motiString.replacingOccurrences(of: "Optional(", with: "°C ")
-        newMotiString = newMotiString.replacingOccurrences(of: ")", with: " ")
-        textView.text = newMotiString
+        var newMotiString = motiString.replacingOccurrences(of: "Optional(", with: "") //
+        newMotiString = newMotiString.replacingOccurrences(of: ")", with: "")
+//        textView.text = newMotiString
+        
+        var motiDbl = Double(newMotiString)
+        let motiNumber = Double(round(100*motiDbl!)/100)
+        textView.text = "\(motiNumber) °C"
+        
     }
     
 

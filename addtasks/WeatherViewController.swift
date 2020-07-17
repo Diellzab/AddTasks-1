@@ -26,16 +26,27 @@ class WeatherViewController: UIViewController {
     }
     
     @IBAction func searchButton(_ sender: Any) {
-        var city = textField.text
-
-        textView.text = city
+        let cityy = textField.text
+        weatherAPI.shared.fetchWeatherApiList(city:cityy!)
     
     }
+    
+
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     
+    
+    
+    
+
+
 }
+
+
+
+
 

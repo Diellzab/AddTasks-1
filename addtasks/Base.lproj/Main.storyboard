@@ -243,7 +243,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XiQ-7N-JtH">
-                                <rect key="frame" x="40" y="283" width="295" height="50"/>
+                                <rect key="frame" x="40" y="283" width="295" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Egz-G5-Jym"/>
                                 </constraints>
@@ -252,7 +252,7 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yol-Gm-k6g">
-                                <rect key="frame" x="40" y="373" width="295" height="40"/>
+                                <rect key="frame" x="40" y="353" width="295" height="40"/>
                                 <color key="backgroundColor" red="0.22039579723298261" green="0.26588925874975877" blue="0.38505909974093266" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="8EL-QX-Smg"/>
@@ -267,7 +267,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yZA-9l-Aah">
-                                <rect key="frame" x="150" y="566" width="75" height="41"/>
+                                <rect key="frame" x="150" y="546" width="75" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="0Sq-rM-5SN"/>
                                 </constraints>
@@ -368,6 +368,7 @@
                                 </state>
                                 <connections>
                                     <action selector="goBack:" destination="rxO-PY-eCN" eventType="touchUpInside" id="qlf-rZ-Zc2"/>
+                                    <segue destination="ey7-Dc-gOw" kind="presentation" id="AiH-f2-mWr"/>
                                 </connections>
                             </button>
                         </subviews>

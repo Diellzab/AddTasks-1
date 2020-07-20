@@ -15,6 +15,10 @@ class WeatherViewController: UIViewController {
     
 // qeto dy posht duhet mi shti mrena butonit
 //
+    @IBAction func goBack(_ sender: Any) {
+    
+      
+    }
     
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var textView: UITextView!
